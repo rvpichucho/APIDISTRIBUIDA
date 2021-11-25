@@ -1,12 +1,12 @@
 <div class="py-12">
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
     <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
-        <div class="overflow-hidden bg-blue-200 rounded dark:bg-green-700 shadow-xl bg- sm:rounded-lg">
-        <figure class="text-center pt-5">
-                <blockquote class="blockquote blockq">
-                    <p>Resolver Derivadas</p>
+        <div class="bg-gradient-to-r from-blue-800 via-blue-500 to-blue-300">
+            <figure class="text-center pt-5">
+                <blockquote class="text-8xl text-white">
+                    <p>DERIVADA</p>
                 </blockquote>
-                <figcaption class="blockquote-footer fig">
+                <figcaption class="text-xl text-white">
                     de segundo grado
                 </figcaption>
             </figure>
@@ -27,49 +27,56 @@
                         <div class="row ">
                             <div class="col order-first pol">
                                 <label for="inputPassword2" class="visually">Ingrese el valor de A</label>
-                                <input type="number" class="form-control" id="" placeholder="A" wire:model="a">
+                                <input type="number"class="form-control hover:text-white text-xl" id="" placeholder="A" wire:model="base2">
                             </div>
                             <div class="col">
                                 <label for="inputPassword2" class="visually">Ingrese el valor de B</label>
-                                <input type="number" class="form-control" id="" placeholder="B" wire:model="b">
+                                <input type="number"class="form-control hover:text-white text-xl" id="" placeholder="B" wire:model="base1">
 
                             </div>
                             <div class="col order-last">
                                 <label for="inputPassword2" class="visually">Ingrese el valor de C</label>
-                                <input type="number" class="form-control" id="" placeholder="C" wire:model="c">
+                                <input type="number"class="form-control hover:text-white text-xl" id="" placeholder="C" wire:model="base0">
                             </div>
                         </div>
 
                     </div>
                 </div>
                 <div class="pb-2 mx-auto mb-4 text-center">
-                <h1 >RESULTADOS</h1>
+                    <h1 class="text-3xl text-white">RESULTADOS</h1>
                     {{-- $res = is_array($res) ? $res : array($res); --}}
                     @if(isset($res))
                     @foreach ($res as $r )
                     <div class="text-xl font-bold">
-                        <input class="block w-48 h-16 m-2 mx-auto rounded-md" disabled type="text" name="" id="" value="{{$r['x1']}}">
-                        <input class="block w-48 h-16 m-2 mx-auto rounded-md" disabled type="text" name="" id="" value="{{$r['x2']}}">
+                        <figure class="text-center pt-2 pb-2 form-control">
+
+                            <blockquote class="blockquote">
+                                @if ($base1>0 && $base0>0)
+                                <p> <strong> {{$base2}}</strong>x<sup>2</sup>+ <strong> {{$base1}}</strong>x+ <strong> {{$base0}}</strong></p>
+
+                                @endif
+                                @if ($base1< 0 && $base0 < 0) <p> <strong> {{$base2}}</strong>x<sup>2</sup> <strong> {{$base1}}</strong>x <strong> {{$base0}}</strong></p>
+
+                                    @endif
+                                    @if ($base1< 0 && $base0> 0)
+                                        <p> <strong> {{$base2}}</strong>x<sup>2</sup> <strong> {{$base1}}</strong>x +<strong> {{$base0}}</strong></p>
+
+                                        @endif
+                                        @if ($base1> 0 && $base0< 0) <p> <strong> {{$base2}}</strong>x<sup>2</sup> +<strong> {{$base1}}</strong>x <strong> {{$base0}}</strong></p>
+
+                                            @endif
+
+
+                            </blockquote>
+                        </figure>
+                        <input class="form-control" disabled type="text" name="" id="" value="{{$r['fpx']}}">
                     </div>
                     @endforeach
                     @endif
                 </div>
-                {{-- <h1 class="text-xl">Respuesta</h1>
-                {{$a.$b.$c}} --}}
 
-                {{-- <label class="block p-1 m-2 mb-2" for="">
-                    <input class="px-4 py-2 text-white bg-purple-600" type="button" value="Enviar">
-                </label> --}}
-                {{-- <div class="mx-auto my-auto text-center">
-                    <h1 class="h-16 text-xl font-semibold tracking-wide text-gray-700 uppercase">Forma de la Ecuación</h1>
-                    <img src="{{ asset('images/forma.jpg') }}" class="h-24 mx-auto md:h-32 md:-mt-5" alt="">
-            </div> --}}
-
-            {{-- <input wire:model="name" type="" placeholder="Ingrese el nombre " class="w-1/2 rounded form-input"
-                    required> --}}
-            {{-- {!! Form::label($for, $text, [$options]) !!} --}}
         </div>
     </div>
 </div>
 
-</div
+</div>

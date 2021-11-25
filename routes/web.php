@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TableController;
 use App\Http\Controllers\EcuationController;
 use App\Http\Controllers\DerivadaController;
+use App\Http\Controllers\TablaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,6 +25,7 @@ Route::get('/multiplicar/{number?}', [TableController::class, 'multiplicacion'])
 Route::get('/suma/{number1?}/{number2?}', [TableController::class, 'suma']);
 Route::get('/ecuacion', [EcuationController::class, 'index'])->name('ecuacion');
 Route::get('/derivada', [DerivadaController::class, 'index'])->name('derivada');
+Route::get('/tabla', [TablaController::class, 'index'])->name('tabla');
 
 
 
