@@ -65,7 +65,9 @@
                     </figure>
                     {{-- $res = is_array($res) ? $res : array($res); --}}
                     @if(isset($res))
+                    
                     @foreach ($res as $r )
+                    @if (isset($r['x1']))
                     <div class="col order-last">
                         <label for="" class="text-xl text-white">x1:</label>
                         <input class="form-control" disabled type="text" name="" id="" value="{{$r['x1']}}">
@@ -76,6 +78,14 @@
                         <input class="form-control" disabled type="text" name="" id="" value="{{$r['x2']}}">
 
                     </div>
+                    @else
+                    <div class="col order-last">
+                        <label for="" class="text-xl text-white">mensaje:</label>
+                        <input class="form-control" disabled type="text" name="" id="" value="{{$r['mensaje']}}">
+                    </div>
+                    @endif
+
+                   
                     @endforeach
                     @endif
                    

@@ -38,6 +38,7 @@
                                 <label for="inputPassword2" class="visually">Ingrese el valor de C</label>
                                 <input type="number"class="form-control hover:text-white text-xl" id="" placeholder="C" wire:model="base0">
                             </div>
+                           
                         </div>
 
                     </div>
@@ -69,7 +70,11 @@
 
                             </blockquote>
                         </figure>
-                        <input class="form-control" disabled type="text" name="" id="" value="{{$r['fpx']}}">
+                        @if (isset($r['x']))
+                        <input class="form-control" disabled type="text" name="" id="" value="{{$r['x']}}">
+                        @else
+                        <p>samiel</p>
+                        @endif
                     </div>
                     @endforeach
                     @endif
