@@ -1,17 +1,4 @@
-<!--<div class="flex" style="font-family: Arial;" x-data="{ open: true }">
 
-    <div class="w-full z-10">
-        <div class="sticky top-0 bg-blue-900 header bg-white h-14 px-10 py-4 border-b-4 border-purple-900 flex items-center justify-between">
-            <div class="flex items-center space-x-12 text-sm">
-                <i class="hover:text-purple text-xl fas fa-bars font-thin cursor-pointer text-white" @click="open = !open"></i>
-                <a href="" class="hover:text-purple-400 text-white  tracking-wider font-thin"><span>Dashboard</span></a>
-                <a href="{{ route('derivada') }}" :active="request()->routeIs('derivada')" class="h-12 px-4 py-3 text-white tracking-wider block bg-red-600 font-thin border-b-2 border-purple-800 hover:text-purple-800 hover:bg-white">{{ __('Resolver Derivada') }}</a>
-                <a href="{{ route('ecuacion') }}" :active="request()->routeIs('ecuacion')" class="h-12 px-4 py-3 text-white tracking-wider block bg-red-600 font-thin border-b-2 border-purple-800 hover:text-purple-800 hover:bg-white">{{ __('Resolver Ecuación') }}</a>
-            </div>
-            <img src="{{ asset('images/img.png') }}" class="h-24 mx-auto md:h-13 md:-mt-5" alt="">
-        </div>
-    </div>
-</div>-->
 
 
 <!DOCTYPE html>
@@ -88,7 +75,6 @@
                                 <div x-show="open" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95" class="">
                                     <div class="px-2 py-2 bg-white rounded-md shadow dark-mode:bg-gray-800">
                                         <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="{{ route('libros') }}">Libros</a>
-                                        <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="{{ route('volumen') }}">Volumen</a>
 
                                     </div>
                                 </div>

@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Libro;
+use App\Models\Genero;
 use Illuminate\Http\Request;
 
-class LibroController extends Controller
+class GeneroController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,9 +15,6 @@ class LibroController extends Controller
     public function index()
     {
         //
-        
-        $libros = Libro::all();
-        return view('pages.libros')->with('libros',$libros);
     }
 
     /**
@@ -34,10 +31,10 @@ class LibroController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Libro  $libro
+     * @param  \App\Models\Genero  $genero
      * @return \Illuminate\Http\Response
      */
-    public function show(Libro $libro)
+    public function show(Genero $genero)
     {
         //
     }
@@ -46,10 +43,10 @@ class LibroController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Libro  $libro
+     * @param  \App\Models\Genero  $genero
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Libro $libro)
+    public function update(Request $request, Genero $genero)
     {
         //
     }
@@ -57,10 +54,10 @@ class LibroController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Libro  $libro
+     * @param  \App\Models\Genero  $genero
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Libro $libro)
+    public function destroy(Genero $genero)
     {
         //
     }

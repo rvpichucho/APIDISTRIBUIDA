@@ -14,5 +14,13 @@ class Libro extends Model
         'titulo',
         'descripcion',
         'year_publicacion',
+        'imagen'
     ];
+    public function genero(){ 
+        return $this->belongsTo(Genero::class); 
+    }
+
+    public function autor(){ //$libro->categoria->nombre
+        return $this->belongsTo(Autor::class); //Pertenece a una categoría.
+    }
 }

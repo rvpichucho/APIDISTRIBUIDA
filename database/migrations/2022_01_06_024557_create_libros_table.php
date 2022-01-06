@@ -13,18 +13,6 @@ class CreateLibrosTable extends Migration
      */
     public function up()
     {
-        Schema::create('autor', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('nombre',100);
-            $table->string('fecha_nacimiento',100);
-            $table->timestamps();
-        });
-        Schema::create('genero', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('nombre',100);
-            $table->timestamps();
-        });
-
         Schema::create('libros', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('autor_id');
@@ -32,10 +20,11 @@ class CreateLibrosTable extends Migration
             $table->string('titulo',100);
             $table->string('descripcion',100);
             $table->string('year_publicacion',100);
+            $table->string('imagen',100);
             $table->timestamps();
 
-            $table->foreign('autor_id')->references('id')->on('autor');
-            $table->foreign('genero_id')->references('id')->on('genero');
+            $table->foreign('autor_id')->references('id')->on('autors');
+            $table->foreign('genero_id')->references('id')->on('generos');
         });
     }
 
@@ -46,8 +35,6 @@ class CreateLibrosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('autor');
-        Schema::dropIfExists('genero');
         Schema::dropIfExists('libros');
     }
 }
