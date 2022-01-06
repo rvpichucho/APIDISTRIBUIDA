@@ -17,6 +17,7 @@ use App\Http\Controllers\FrecuenciaPendularController;
 use App\Http\Controllers\AlturaController;
 use App\Http\Controllers\ParabolicoController;
 use App\Http\Controllers\LibreController;
+use App\Http\Controllers\LibroController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -37,6 +38,8 @@ Route::get('/suma/{number1?}/{number2?}', [TableController::class, 'suma']);
 Route::get('/ecuacion', [EcuationController::class, 'index'])->name('ecuacion');
 Route::get('/derivada', [DerivadaController::class, 'index'])->name('derivada');
 Route::get('/tabla', [TablaController::class, 'index'])->name('tabla');
+
+Route::get('/libros', [LibroController::class, 'index'])->name('libros');
 
 Route::get('/densidad', [DensidadController::class, 'index'])->name('densidad');
 Route::get('/volumen', [VolumenController::class, 'index'])->name('volumen');
