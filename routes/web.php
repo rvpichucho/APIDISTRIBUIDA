@@ -32,6 +32,8 @@ Route::get('/deletegener', [GeneroController::class, 'destroy'])->name('deletege
 
 
 
+Route::get('/libros/crud', [LibroController::class, 'libroAdd'])->name('libroscrud');
+Route::post('/libros/crud', [LibroController::class, 'store'])->name('libroscrud');
 
 
 

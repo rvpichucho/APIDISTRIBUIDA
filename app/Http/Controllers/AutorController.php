@@ -31,8 +31,7 @@ class AutorController extends Controller
      public function store(Request $request)
     {
         $autor = new Autor;
-        $autor->create($request->all());
-        
+        $autor->create($request->all());        
         $autor = Autor::all();
         return view('pages.createauth')->with('autor',$autor);
     }

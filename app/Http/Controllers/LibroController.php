@@ -16,8 +16,8 @@ class LibroController extends Controller
     {
         //
         
-        $libros = Libro::all();
-        return view('pages.libros')->with('libros',$libros);
+        $libro = Libro::all();
+        return view('pages.libros')->with('libro',$libro);
     }
 
     /**
@@ -29,6 +29,11 @@ class LibroController extends Controller
     public function store(Request $request)
     {
         //
+        $libro = new Libro;
+        $libro->create($request->all());
+        
+        $libro = Libro::all();
+        return view('pages.crudlibro')->with('libro',$libro);
     }
 
     /**
@@ -52,6 +57,7 @@ class LibroController extends Controller
     public function update(Request $request, Libro $libro)
     {
         //
+        $libro->update($request->all());
     }
 
     /**
@@ -63,5 +69,13 @@ class LibroController extends Controller
     public function destroy(Libro $libro)
     {
         //
+        $libro->delete();
+    }
+
+    public function libroAdd()
+    {
+        //
+        $libro = Libro::all();
+        return view('pages.crudlibro')->with('libro',$libro);
     }
 }
