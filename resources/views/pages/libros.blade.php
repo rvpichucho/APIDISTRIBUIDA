@@ -2,7 +2,7 @@
     <div class="max-w-7xs mx-20 sm:px-5 lg:px-20">
         <div class="absolute top-0 m-20 sm:rounded-lg">
             <div class="p-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-5">
-                @foreach($libros as $book)
+                @foreach($libro as $book)
                 <div class="rounded overflow-hidden shadow-lg" style="background-color:FFFFFF">
                     <img class="w-full" src="{!! $book->imagen !!}" alt="...">
                     <div class="px-6 py-4">

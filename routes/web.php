@@ -19,7 +19,8 @@ Route::get('/', function () {
 });
 
 Route::get('/libros', [LibroController::class, 'index'])->name('libros');
-
+Route::get('/libros/crud', [LibroController::class, 'libroAdd'])->name('libroscrud');
+Route::post('/libros/crud', [LibroController::class, 'store'])->name('libroscrud');
 
 
 
