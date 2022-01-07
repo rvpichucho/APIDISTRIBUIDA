@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 
 class AutorController extends Controller
 {
+    
+    
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +16,9 @@ class AutorController extends Controller
      */
     public function index()
     {
-        //
+         $autores = Autor::all();
+        return view('pages.autores')->with('autores',$autores); 
+       
     }
 
     /**
@@ -23,9 +27,20 @@ class AutorController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+
+     public function store(Request $request)
+    {
+        $autor = new Autor;
+        $autor->create($request->all());
+        
+        $autor = Autor::all();
+        return view('pages.createauth')->with('autor',$autor);
+    }
+    public function libroAdd()
     {
         //
+        $autor = Autor::all();
+        return view('pages.createauth')->with('autor',$autor);
     }
 
     /**
@@ -34,9 +49,10 @@ class AutorController extends Controller
      * @param  \App\Models\Autor  $autor
      * @return \Illuminate\Http\Response
      */
-    public function show(Autor $autor)
+    public function show($id)
     {
-        //
+        /*$autor = $this->autores->obtenerAutorPorId($id);
+        return view('pages.autores', ['autor' => $autor]);*/
     }
 
     /**
@@ -48,7 +64,7 @@ class AutorController extends Controller
      */
     public function update(Request $request, Autor $autor)
     {
-        //
+        $autor->update($request->all());
     }
 
     /**
@@ -58,7 +74,7 @@ class AutorController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function destroy(Autor $autor)
-    {
-        //
+    {        
+        $autor->delete();        
     }
 }

@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\LibroController;
+use App\Http\Controllers\AutorController;
+use App\Http\Controllers\GeneroController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,6 +21,16 @@ Route::get('/', function () {
 });
 
 Route::get('/libros', [LibroController::class, 'index'])->name('libros');
+//Links CRUD AUTORES
+Route::get('/autores', [AutorController::class, 'index'])->name('autores');
+Route::get('/createauth', [AutorController::class, 'store'])->name('createauth');
+Route::get('/deleteauth', [AutorController::class, 'destroy'])->name('deleteauth');
+//Links CRUD GENEROS
+Route::get('/generos', [GeneroController::class, 'index'])->name('generos');
+Route::get('/creategener', [GeneroController::class, 'store'])->name('creategener');
+Route::get('/deletegener', [GeneroController::class, 'destroy'])->name('deletegener');
+
+
 
 
 

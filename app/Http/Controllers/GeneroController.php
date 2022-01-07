@@ -14,7 +14,8 @@ class GeneroController extends Controller
      */
     public function index()
     {
-        //
+        $generos = Genero::all();
+        return view('pages.generos')->with('generos',$generos); 
     }
 
     /**
@@ -25,9 +26,17 @@ class GeneroController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $genero = new Genero;
+        $genero->create($request->all());        
+        $genero = Genero::all();
+        return view('pages.creategener')->with('genero',$genero);
     }
-
+    public function generoAdd()
+    {
+        //
+        $genero = Genero::all();
+        return view('pages.creategener')->with('genero',$genero);
+    }
     /**
      * Display the specified resource.
      *
@@ -48,7 +57,7 @@ class GeneroController extends Controller
      */
     public function update(Request $request, Genero $genero)
     {
-        //
+        $genero = update($request->all());
     }
 
     /**
@@ -59,6 +68,6 @@ class GeneroController extends Controller
      */
     public function destroy(Genero $genero)
     {
-        //
+        $genero->delete();
     }
 }
